@@ -28,3 +28,18 @@
 .ghost:hover {
   background: var(--grey-light-hover);
 }
+.arrow {
+  display: inline-block;
+  margin-left: 10px;
+
+}
+
+.down {
+  transform: rotate(90deg);
+  transition: all .3s;
+}
+
+.primaryArrow,
+.ghost:hover svg {
+  fill: var(--white);
+}
