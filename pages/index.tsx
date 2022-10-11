@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Htag, Paragraph, Raiting, Tag } from '../components';
+import { Layout } from '../layout/Layout';
 
 export default function Home(): JSX.Element {
   const [count, setCount] = useState<number>(0);
@@ -12,7 +13,7 @@ export default function Home(): JSX.Element {
   }, [count]);
 
   return (
-    <div>
+    <Layout>
       <Htag tag="h1">hello</Htag>
       <Button apperance="primary" arrow="right">
         hello
@@ -39,6 +40,6 @@ export default function Home(): JSX.Element {
         red
       </Tag>
       <Raiting raiting={raiting} isEditible setraiting={setraiting} />
-    </div>
+    </Layout>
   );
 }
