@@ -3,7 +3,7 @@ import { Button, Htag, Paragraph, Raiting, Tag } from '../components';
 
 export default function Home(): JSX.Element {
   const [count, setCount] = useState<number>(0);
-
+  const [raiting, setraiting] = useState<number>(0);
   useEffect(() => {
     console.log(' count ' + count);
     return function cleanup() {
@@ -38,7 +38,7 @@ export default function Home(): JSX.Element {
       <Tag size="medium" color="primary">
         red
       </Tag>
-      <Raiting raiting={4} />
+      <Raiting raiting={raiting} isEditible setraiting={setraiting} />
     </div>
   );
 }
