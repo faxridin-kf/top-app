@@ -1,7 +1,16 @@
-import React from "react";
-import { Button, Htag, Paragraph, Tag } from '../components';
+import React, { useEffect, useState } from 'react';
+import { Button, Htag, Paragraph, Raiting, Tag } from '../components';
 
 export default function Home(): JSX.Element {
+  const [count, setCount] = useState<number>(0);
+
+  useEffect(() => {
+    console.log(' count ' + count);
+    return function cleanup() {
+      console.log('unmont');
+    };
+  }, [count]);
+
   return (
     <div>
       <Htag tag="h1">hello</Htag>
@@ -11,7 +20,9 @@ export default function Home(): JSX.Element {
       <Button apperance="ghost" arrow="down">
         hello
       </Button>
-      <Paragraph size="s"> hello this is paragraph</Paragraph>
+      <Paragraph size="s" onClick={() => setCount(count + 1)}>
+        {count} hello this is paragraph
+      </Paragraph>
       <Tag size="medium" color="red">
         red
       </Tag>
@@ -27,6 +38,7 @@ export default function Home(): JSX.Element {
       <Tag size="medium" color="primary">
         red
       </Tag>
+      <Raiting raiting={4} />
     </div>
   );
 }
