@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Htag, Paragraph, Raiting, Tag } from '../components';
-import { Layout } from '../layout/Layout';
+import { Layout, withLayout } from '../layout/Layout';
 
-export default function Home(): JSX.Element {
+function Home(): JSX.Element {
   const [count, setCount] = useState<number>(0);
   const [raiting, setraiting] = useState<number>(0);
   useEffect(() => {
@@ -43,3 +43,4 @@ export default function Home(): JSX.Element {
     </Layout>
   );
 }
+export default withLayout(Home);
